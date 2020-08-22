@@ -13,10 +13,12 @@ The library management program undertake the following functions:
 6. The system is integrated with the payment system, which is the place to pay compensation when borrowers pay in installments to the library system.
 7. The system can be list the history borrowing book of all member who has ID library card.
 
-## Usage
+## Usage package/ import
 
 The system need to use some supported package/ import to achieve the following purposes:
 1. **Operate any problem related to I/O**:
+
+This is indicated by collect data related to library **(Input ISBN, price of book or answer some questions, ...)** we need add the following import to support:
 
 ```java
 import java.util.*;
@@ -25,24 +27,50 @@ import java.util.*;
 
 2. **Operate the process date-related data**:
 
-This is reflected in the late payment law referenced by **VNU center library law**:
+This is indicated by the **law of fines money since return book late** that are retrived by **VNU center library law**:
 
 > If you returned book later than day you began borrow book one week (i.e 7 days), the borrower must pay fine money by the formula: 
 >
-> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;<img src="https://latex.codecogs.com/gif.latex?S%28d_1%2C%20d_2%29%20%3D%20P%28x%29%20&plus;%205000%20%5Ctimes%20%5Cleft%28D%28d_1%2C%20d_2%29%20-%207%20%5Cright%29"> 
+> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; <img src="https://latex.codecogs.com/gif.latex?S(d_1,d_2,x)&space;=&space;P(x)&space;&plus;&space;5000&space;\times&space;\left(D(d_1,&space;d_2)&space;-&space;7&space;\right)"> 
 >
 Which the function and description each of function in above formula is shown below:
 
 
 | Function | Description |
 | --- | ----------- |
-| <img src="https://latex.codecogs.com/gif.latex?S(d_1,&space;d_2)"> | Fined money since the borrower returned book over-time |
+| <img src="https://latex.codecogs.com/gif.latex?S(d_1,&space;d_2,&space;x)"> | Fined money since the borrower <img src="https://latex.codecogs.com/gif.latex?x"> returned book over-time |
 | <img src="https://latex.codecogs.com/gif.latex?P(x)"> | Price of the book which person <img src="https://latex.codecogs.com/gif.latex?x"> borrow |
 | <img src="https://latex.codecogs.com/gif.latex?D(d_1,&space;d_2)"> | Number of days between two days d<sub>1</sub> and d<sub>2</sub> |
 
-In order to find number of days between two days **d<sub>1</sub> and d<sub>2</sub>** we need add the following import to support the implementation of compute:
+In order to find number of days between two days **d<sub>1</sub> and d<sub>2</sub>**, we need add the following import to support the implementation of computing:
 
 ```java
 import java.text.SimpleDateFormat;
+import java.util.*;
+/* Including java.util.Math */
 ```
-3. **Operate checking the validity of the string**
+
+3. **Operate checking the input validation**
+
+This is indicated by **checking some ISBN code, personal identification number (ID number), phone, email of the person who register library card**. In order to do it, we need add the following import to support input validation function:
+
+```java
+import java.util.regex.*;
+/**
+ * Including java.util.regex.Matcher
+ * Including java.util.regex.Pattern
+ */
+```
+
+4. **Generates random codes for increased security**
+
+This is indicated by **making random UUID code or making random 12-digit number**. To achieve that purpose, we need add the following import to make the random string:
+
+```java
+import java.util.*;
+/**
+ * Including java.util.UUID.randomUUID()
+ * Including java.util.Random.nextInt
+ */
+```
+
