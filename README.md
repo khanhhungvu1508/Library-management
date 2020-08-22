@@ -20,7 +20,7 @@ The system need to use some supported package/ import to achieve the following p
 
 ```java
 import java.util.*;
-/* Incluing java.util.scanner */
+/* Including java.util.scanner */
 ```
 
 2. **Operate the process date-related data**:
@@ -29,7 +29,7 @@ This is reflected in the late payment law referenced by **VNU center library law
 
 > If you returned book later than day you began borrow book one week (i.e 7 days), the borrower must pay fine money by the formula: 
 >
-> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; <img src="https://latex.codecogs.com/gif.latex?S%28d_1%2C%20d_2%29%20%3D%20P%28x%29%20&plus;%205000%20%5Ctimes%20%5Cleft%28D%28d_1%2C%20d_2%29%20-%207%20%5Cright%29"> 
+> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;<img src="https://latex.codecogs.com/gif.latex?S%28d_1%2C%20d_2%29%20%3D%20P%28x%29%20&plus;%205000%20%5Ctimes%20%5Cleft%28D%28d_1%2C%20d_2%29%20-%207%20%5Cright%29"> 
 >
 Which the function and description each of function in above formula is shown below:
 
