@@ -31,7 +31,7 @@ This is indicated by the **law of fines money since return book late** that are 
 
 > If you returned book later than day you began borrow book one week (i.e 7 days), the borrower must pay fine money by the formula: 
 >
-> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; <img src="https://latex.codecogs.com/gif.latex?S(d_1,d_2,x)&space;=&space;P(x)&space;&plus;&space;5000&space;\times&space;\left(D(d_1,&space;d_2)&space;-&space;7&space;\right)"> 
+> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; <img src="https://latex.codecogs.com/gif.latex?S(d_1,d_2,x)&space;=&space;P(x)&space;&plus;&space;5000&space;\times&space;\left(D(d_1,&space;d_2)&space;-&space;7&space;\right)"> 
 >
 Which the function and description each of function in above formula is shown below:
 
