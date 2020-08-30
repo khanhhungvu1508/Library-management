@@ -205,3 +205,20 @@ if (!(Pattern.matches("^[FM]$", sex)))
     return false;
 }
 ```
+
+### 8. Checking validity of day borrow/ return
+
+According to the convention of the app, input for day borrow/ return called **valid** if it input in form **dd/mm/yyyy** and retrieved from [The regular expression for Date format dd/mm/yyyy](https://stackoverflow.com/questions/8283405/what-is-the-regular-expression-for-date-format-dd-mm-yyyy/49609587), the regular expression of position is represented by:
+```bash
+^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+if (!(Pattern.matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$", dayReturn)))
+{
+    System.out.println ("The format of day returned is not correct! Please read carefully instruction and do it again!");
+    return false;
+}
+```
