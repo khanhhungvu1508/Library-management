@@ -89,7 +89,119 @@ In this app, we used the **ISBN-13 code** to check the valid string by user inpu
 ```java
 if (!(Pattern.matches("^(?:ISBN(?:-13)?:?\\ )?(?=[0-9]{13}$|(?=(?:[0-9]+[-\\ ]){4})[-\\ 0-9]{17}$)97[89][-\\ ]?[0-9]{1,5}[-\\ ]?[0-9]+[-\\ ]?[0-9]+[-\\ ]?[0-9]$", super.getISBN())))
 {
-  System.out.println("ISBN is not valid! Please check ISBN code again!");
-  return false;
+    System.out.println("ISBN is not valid! Please check ISBN code again!");
+    return false;
+}
+```
+
+### 2. Checking validity of name person
+
+Retrieved from [Name validation](https://www.regextester.com/93648), one name called **valid name** if the regular expression of name is represented by:
+
+```bash
+^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+if (!(Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", name)))
+{
+    System.out.println("Your name contains the invalid letter. Please check your name again!");
+    return false;
+}
+```
+
+### 3. Checking validity of ID
+
+Retrieved from [Regex to match a custom ID format](https://stackoverflow.com/questions/46077747/regex-to-match-a-custom-id-format/46077883), if no alphabet is allowed, one ID called **valid ID** if the regular expression of ID is represented by:
+
+```bash
+^[0-9]\S+?[0-9]{8,20}$
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+if (!(Pattern.matches("^[0-9]\\S+?[0-9]{8,20}$", id)))
+{
+    System.out.println("Your ID is invalid. Please check your ID again!");
+    return false;
+}
+```
+
+### 4. Checking validity of phone number
+
+According to the convention of the app, one phone number called **valid phone number** if there are **from 8 to 20 1-digit numbers (from 0 to 9)** or the regular expression of phone number is represented by:
+```bash
+^[0-9]{8,20}$
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+if (!(Pattern.matches("^[0-9]{8,20}$", phone)))
+{
+    System.out.println("Your phone is invalid. Please check your phone again!");
+    return false;
+}
+```
+
+### 5. Checking validity of email
+Retrieved from [Validate email](https://viblo.asia/p/tim-hieu-ve-regular-expression-yMnKMARmK7P), one email called **valid ID** if the regular expression of email is represented by:
+
+```bash
+^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+if (!(Pattern.matches("^[a-z][a-z0-9_.]{5,32}@[a-z0-9]{2,}(.[a-z0-9]{2,4}){1,2}$", email)))
+{
+    System.out.println("Your email is not valid. Please check your email again!");
+    return false;
+}
+```
+
+### 6. Checking validity position of book
+
+According to the convention of the app, one position of book called **valid phone number** if it has a form **A?-?** for natural science book and has a form **B?-?** for social science book with **?** is one number, for example **1, 2, 3, ...** or the regular expression of position is represented by:
+```bash
+^A[0-9]+-[0-9]+$ # For natural science book
+^B[0-9]+-[0-9]+$ # For social science book
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+/* For natural science book */
+if (!Pattern.matches("^A[0-9]+-[0-9]+$", position))
+{
+    System.out.println("The position isn't correct syntax! Please check it again");
+    return false;
+}
+/* For social science book */
+if (!Pattern.matches("^B[0-9]+-[0-9]+$", position))
+{
+    System.out.println("The position isn't correct syntax! Please check it again");
+    return false;
+}
+```
+
+### 7. Checking validity of gender
+
+According to the convention of the app, input for gender (sex) called **valid** if it input only **F** (Female) or **M** (Male) or the regular expression of position is represented by:
+```bash
+^[FM]$
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+if (!(Pattern.matches("^[FM]$", sex)))
+{
+    System.out.println("Your sex only F or M and don't take the unnecessary letter. Please check your sex again!");
+    return false;
 }
 ```
