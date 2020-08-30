@@ -74,3 +74,22 @@ import java.util.*;
  */
 ```
 
+## Several function used for checking valid input
+
+### 1. Checking validity of ISBN code
+
+In this app, we used the **ISBN-13 code** to check the valid string by user input. Retrieved from [O'Reilly Regular Expressions Cookbook, 2nd edition](https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s13.html), if omitting the fake / real ISBN code is checked by the [check digit algorithm](https://en.wikipedia.org/wiki/International_Standard_Book_Number), one ISBN-13 digit called **valid code** if the regular expression of code is represented by:
+
+```bash
+^(?:ISBN(?:-13)?:?●)?(?=[0-9]{13}$|(?=(?:[0-9]+[-●]){4})[-●0-9]{17}$)97[89][-●]?[0-9]{1,5}[-●]?[0-9]+[-●]?[0-9]+[-●]?[0-9]$
+```
+
+**In Java**, above is represented by the equivalent structure and the result of the condition shown in the files above:
+
+```java
+if (!(Pattern.matches("^(?:ISBN(?:-13)?:?\\ )?(?=[0-9]{13}$|(?=(?:[0-9]+[-\\ ]){4})[-\\ 0-9]{17}$)97[89][-\\ ]?[0-9]{1,5}[-\\ ]?[0-9]+[-\\ ]?[0-9]+[-\\ ]?[0-9]$", super.getISBN())))
+{
+  System.out.println("ISBN is not valid! Please check ISBN code again!");
+  return false;
+}
+```
