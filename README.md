@@ -222,3 +222,25 @@ if (!(Pattern.matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9]
     return false;
 }
 ```
+## Several random functions are used to increase security
+
+### 1. Randomize UUID code
+
+**Defination**: Please visit [Universally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+
+**In Java**, to generate a UUID randomly we can use a function:
+
+```java
+/* To generate the idCard is a random UUID code */
+idCard = UUID.randomUUID().toString();
+```
+
+### 2. Randomize 12-digit number
+
+**In Java**, to generate a 12-digit random number we could write the following:
+
+```java
+/* To generate the billCode is a 12-digit random number */
+Random random = new Random();
+billCode = random.ints(leftLimit, rightLimit + 1).filter(i -> (i >= 48 && i <= 57)).limit(targetStringLength).collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
+```
